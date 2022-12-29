@@ -1,29 +1,32 @@
 
-function getCompChoice(){
-    let CompchoiceRandom = Math.floor(Math.random() * 3) + 1
-    let ComputerChoice="";
 
-    switch (CompchoiceRandom){
-        case 1:
-        ComputerChoice="rock"
+function getCompChoice() {
+    let CompchoiceRandom = random(3);
+    let ComputerChoice = '';
+  
+    switch (CompchoiceRandom) {
+      case 1:
+        ComputerChoice = 'Rock';
         break;
-
-        case 2:
-        ComputerChoice= "scissors"
+      case 2:
+        ComputerChoice= 'Paper';
         break;
-
-        case 3:
-        ComputerChoice= "paper"
+      case 3:
+        ComputerChoice= 'Scissors';
         break;
-
+      default:
+        break;
     }
+  
     return ComputerChoice;
 }
+   
+
 
  function playerselection(playerchoice){
     const playerchoice = prompt("Kindly choose Rock, paper or scissors:").toLocaleLowerCase();
     if (playerchoice ==="rock" || playerchoice ==="paper" ||playerchoice ==="scissors"){
-        console.log("you chose:"+ `${playerchoice}`);
+        console.log(`you chose:+ ${playerchoice}`);
     }
     else{
         console.log("ERROR! Try again!");
@@ -40,7 +43,7 @@ function getCompChoice(){
         console.log("you lose Computer wins--paper beats rock");
     }
     else if ( playerchoice==="rock" && Computerchoice==="rock"){
-        console.log("It's a tie you both chose"` ${playerchoice}`);
+        console.log(`It's a tie you both chose ${playerchoice}`);
     } 
     else if (playerchoice==="rock" && Computerchoice==="scissors"){
         console.log("you win rock beats scissors");
@@ -50,7 +53,7 @@ function getCompChoice(){
         console.log("you win paper beats rock");
     }
     else if (playerchoice==="paper" && Computerchoice==="paper"){
-        console.log("It's a tie you both chose"`${playerchoice}`);
+        console.log(`It's a tie you both chose ${playerchoice}`);
     }
     else if (playerchoice==="paper" && Computerchoice==="scissors"){
         console.log("you lose scissors beats paper");
