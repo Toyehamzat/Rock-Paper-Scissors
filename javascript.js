@@ -1,7 +1,7 @@
 
 
 function getCompChoice() {
-    let CompchoiceRandom = random(3);
+    const CompchoiceRandom = Math.floor(Math.random() * 3 + 1);
     let ComputerChoice = '';
   
     switch (CompchoiceRandom) {
@@ -23,59 +23,64 @@ function getCompChoice() {
    
 
 
- function playerselection(playerchoice){
-    const playerchoice = prompt("Kindly choose Rock, paper or scissors:").toLocaleLowerCase();
-    if (playerchoice ==="rock" || playerchoice ==="paper" ||playerchoice ==="scissors"){
-        console.log(`you chose:+ ${playerchoice}`);
+ function playerselection() {
+    const Playerchoice = prompt("Kindly choose Rock, paper or scissors:").toLocaleLowerCase();
+    if (Playerchoice ==="rock" || Playerchoice ==="paper" ||Playerchoice ==="scissors"){
+        console.log(`you chose ${Playerchoice}`);
     }
     else{
         console.log("ERROR! Try again!");
             
     }
-    return playerchoice;
+  return Playerchoice;
  
 }
 
 
- function Playround(Computerchoice,playerchoice){
+ function Playround(Computerchoice,Playerchoice){
+   
     //user inputs rock
-    if(playerchoice==="rock" && Computerchoice ==="paper"){
+    if(Playerchoice==="rock" && Computerchoice ==="paper"){
         console.log("you lose Computer wins--paper beats rock");
     }
-    else if ( playerchoice==="rock" && Computerchoice==="rock"){
-        console.log(`It's a tie you both chose ${playerchoice}`);
+    else if ( Playerchoice==="rock" && Computerchoice==="rock"){
+        console.log(`It's a tie you both chose ${Playerchoice}`);
     } 
-    else if (playerchoice==="rock" && Computerchoice==="scissors"){
+    else if (Playerchoice==="rock" && Computerchoice==="scissors"){
         console.log("you win rock beats scissors");
     }
     //user input paper
-    else if (playerchoice==="paper" && Computerchoice==="rock"){
+    else if (Playerchoice==="paper" && Computerchoice==="rock"){
         console.log("you win paper beats rock");
     }
-    else if (playerchoice==="paper" && Computerchoice==="paper"){
-        console.log(`It's a tie you both chose ${playerchoice}`);
+    else if (Playerchoice==="paper" && Computerchoice==="paper"){
+        console.log(`It's a tie you both chose ${Playerchoice}`);
     }
-    else if (playerchoice==="paper" && Computerchoice==="scissors"){
+    else if (Playerchoice==="paper" && Computerchoice==="scissors"){
         console.log("you lose scissors beats paper");
     }
     //user inputs scissors
-    else if(playerchoice==="scissors" && Computerchoice==="rock"){
+    else if(Playerchoice==="scissors" && Computerchoice==="rock"){
         console.log("YOU LOSE!! rock beats scissors");
     }
-    else if (playerchoice==="scissors" && Computerchoice==="paper"){
+    else if (Playerchoice==="scissors" && Computerchoice==="paper"){
         console.log("YOU WIN!! scissors beats paper");
     }
     else{
-        console.log("It's a tie");
+        console.log("it's a tie");
     }
+  
+    
 }
-    const playerchoice = "rock";
+    const Playerchoice = playerselection();
     const Computerchoice = getCompChoice();
-    console.log(Playround(Computerchoice, playerchoice));
+    console.log(Playround(Computerchoice, Playerchoice));
 
 
 
-I DON TIRE OOO JESUSSSSSSS
+
+
+
 
 
     
