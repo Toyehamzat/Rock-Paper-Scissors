@@ -1,0 +1,80 @@
+*{
+    
+    font-family:sans-serif;
+    background-color: rgb(56, 54, 54);
+
+    margin: 0;
+    padding: 0;
+    
+}
+.game-container {
+    height: 500px;
+    width: 800px;
+    position: absolute;
+    background:rgb(66, 65, 65);
+    border-radius: 10px;
+    top: 100px;
+    left: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+ 
+
+}
+
+ .head {
+    font-size:50px;
+    background-color:transparent;
+    
+}
+
+.choiceBtn {
+
+    border-radius: 5px;
+    transition: all .3s ease;
+    background-color:transparent;
+    border: rgb(66, 65, 65) ;
+    outline: none;
+    margin-left: 40px;
+    margin-top: 20px;
+    border-radius: 10px;
+  
+    
+    
+}
+.choice{
+    display: flex;
+    flex-direction:row;
+    background-color: rgb(66, 65, 65);
+
+}
+#rock {
+    margin-left:0;
+}
+.choiceBtn img{
+    object-fit: cover;
+    width: 130px;
+    height: 150px;
+}
+.choiceBtn:hover{
+    transform: scale(0.96);
+}
+.score{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+    background-color: rgb(66, 65, 65);
+}
+
+.score-text{
+    margin: 50px;
+    background-color: rgb(66, 65, 65);
+}
+
+#finale{
+    font-size: 35px;
+    background-color:rgb(66, 65, 65);
+
+} 
