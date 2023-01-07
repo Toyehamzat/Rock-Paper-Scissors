@@ -1,16 +1,16 @@
 //declearing
 const finale=document.querySelector('#finale')
-const ChoiceBtn=document.querySelector('.choiceBtn')
-let ComputerChoice
-let PlayerChoice
+const choiceBtn=document.querySelectorAll('.choiceBtn')
+let computerChoice
+let playerChoice
 let playerScore=0
 let computerScore=0
-let Player=document.querySelector('#playerScore')
-Player.textContent =`player score: ${playerScore}`
+let player=document.querySelector('#playerScore')
+player.textContent =`player score: ${playerScore}`
 let computer=document.querySelector('#computerScore')
 computer.textContent = `Computer Score: ${computerScore}`
-ChoiceBtn.forEach((button) => {button.addEventListener('click',() =>{
-    PlayerChoice=button.id
+choiceBtn.forEach((button) => {button.addEventListener('click',() =>{
+    playerChoice=button.id
     getComputerChoice();
     playgame();
 }
@@ -20,58 +20,58 @@ function getComputerChoice() {
     const computerRandNum = Math.floor(Math.random() * 3) + 1
     switch(computerRandNum){
       case 1:
-        ComputerChoice = 'rock';
+        computerChoice = 'rock';
         break
       case 2:
-        ComputerChoice= 'paper';
+        computerChoice= 'paper';
         break
       case 3:
-        ComputerChoice= 'scissors';
+        computerChoice= 'scissors';
         break
      }
 }
    function declarewinner(){
     //if player selection = computer selection
-    if (PlayerChoice == ComputerChoice) {
-        finale.textContent = `It is a Tie! you both chose ${PlayerChoice}`
+    if (playerChoice == computerChoice) {
+        finale.textContent = `It is a Tie! you both chose ${playerChoice}`
      //if player selects rock 
-    }else if (PlayerChoice == "rock" && ComputerChoice == "scissors") {
-        finale.textContent = `You Won! ${PlayerChoice} beats ${ComputerChoice}`
+    }else if (playerChoice == "rock" && computerChoice == "scissors") {
+        finale.textContent = `You Won! ${playerChoice} beats ${computerChoice}`
         playerScore++;
-    }else if (PlayerChoice == "rock" && ComputerChoice == "paper") {
-        finale.textContent = `You Lose! ${ComputerChoice} beats ${PlayerChoice}`
+    }else if (playerChoice == "rock" && computerChoice == "paper") {
+        finale.textContent = `You Lose! ${computerChoice} beats ${playerChoice}`
         computerScore++; 
     //if players selects paper
-    }else if (PlayerChoice == "paper" && ComputerChoice == "scissors") {
-        finale.textContent = `You Lose! ${ComputerChoice} beats ${PlayerChoice}`
+    }else if (playerChoice == "paper" && computerChoice == "scissors") {
+        finale.textContent = `You Lose! ${computerChoice} beats ${playerChoice}`
         computerScore++;     
-    }else if (PlayerChoice == "paper" && ComputerChoice == "rock") {
-        finale.textContent = `You Won! ${PlayerChoice} beats ${ComputerChoice}`
+    }else if (playerChoice == "paper" && computerChoice == "rock") {
+        finale.textContent = `You Won! ${playerChoice} beats ${computerChoice}`
         playerScore++;    
      // if player selects scissors   
-    }else if (PlayerChoice == "scissors" && ComputerChoice == "paper") {
-        finale.textContent = `You Won! ${PlayerChoice} beats ${ComputerChoice}`
+    }else if (playerChoice == "scissors" && computerChoice == "paper") {
+        finale.textContent = `You Won! ${playerChoice} beats ${computerChoice}`
         playerScore++;    
-    }else if (PlayerChoice == "scissors" && ComputerChoice == "rock") {
-        finale.textContent = `You Lose! ${ComputerChoice} beats ${PlayerChoice}`
+    }else if (playerChoice == "scissors" && computerChoice == "rock") {
+        finale.textContent = `You Lose! ${computerChoice} beats ${playerChoice}`
         computerScore++;  
     }
 }
  function playgame(){
     declarewinner();
-    Player.textContent = `Player Score: ${playerScore}`
+    player.textContent = `Player Score: ${playerScore}`
     computer.textContent = `Computer Score: ${computerScore}`
     if (playerScore == 5) {
         finale.textContent = "You won the Game!"
         playerScore = 0;
         computerScore = 0;
-        Player.textContent = `Player Score: ${playerScore}`
+        player.textContent = `Player Score: ${playerScore}`
         computer.textContent = `Computer Score: ${computerScore}`
     } else if(computerScore == 5){
         finale.textContent = "You lost the Game, Maybe you should try again"
         playerScore = 0;
         computerScore = 0;
-        Player.textContent = `Player Score: ${playerScore}`
+        player.textContent = `Player Score: ${playerScore}`
         computer.textContent = `Computer Score: ${computerScore}`
     }
 }
